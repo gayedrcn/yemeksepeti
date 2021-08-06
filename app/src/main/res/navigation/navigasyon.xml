@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigasyon"
+    app:startDestination="@id/anasayfaFragment">
+
+    <fragment
+        android:id="@+id/anasayfaFragment"
+        android:name="com.hm.yemeksepeti.fragments.AnasayfaFragment"
+        android:label="AnasayfaFragment"
+        tools:layout="@layout/fragment_ana_sayfa">
+        <action
+            android:id="@+id/detayGecis"
+            app:destination="@id/detayFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detayFragment"
+        android:name="com.hm.yemeksepeti.fragments.DetayFragment"
+        android:label="DetayFragment"
+        tools:layout="@layout/fragment_detay">
+        <argument
+            android:name="yemekNesnesi"
+            app:argType="com.hm.yemeksepeti.entities.Yemekler" />
+        <action
+            android:id="@+id/action_detayFragment_to_sepetFragment"
+            app:destination="@id/sepetFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/sepetFragment"
+        android:name="com.hm.yemeksepeti.fragments.SepetFragment"
+        android:label="sepet_fragment"
+        tools:layout="@layout/sepet_fragment" >
+        <argument
+            android:name="sepetNesne"
+            app:argType="com.hm.yemeksepeti.entities.Yemekler" />
+    </fragment>
+</navigation>
